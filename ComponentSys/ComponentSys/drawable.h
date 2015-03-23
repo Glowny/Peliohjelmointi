@@ -1,6 +1,7 @@
+#pragma once
 #include "SFML\Graphics.hpp"
 
-struct drawable
+struct Drawable
 {
 	sf::VertexArray vertexArray;
 	sf::Texture texture;

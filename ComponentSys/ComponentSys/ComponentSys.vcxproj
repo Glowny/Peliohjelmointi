@@ -75,13 +75,17 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RenderComponent.cpp" />
+    <ClCompile Include="RenderComponentFactory.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
+    <ClInclude Include="Drawable.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="drawable.h" />
     <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="RenderComponentFactory.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="TransformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

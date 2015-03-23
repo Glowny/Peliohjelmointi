@@ -19,5 +19,5 @@ TransformComponent::~TransformComponent()
 }
 void TransformComponent::update()
 {
-	location.x = location.x + 1.0f;
+	location.x = location.x + 0.1f;
 }
