@@ -4,15 +4,18 @@
 #include "TransformComponent.h"
 #include "RenderComponent.h"
 #include "RenderComponentFactory.h"
+#include "RenderSystem.h"
 #include <vector>
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(900, 900), "Window");
+	RenderSystem renderSystem;
 
-	std::vector<GameObject> gameObjects;
+	renderSystem.CreateWindow(sf::Vector2i(900, 900), "renderSystemWindow");
+
+	std::vector<GameObject*> gameObjects;
 
 	RenderComponentFactory renderCFactory;
-	RenderComponent* Rcomponent1 = renderCFactory.create("welcome.jpg", sf::Vector2f(100, 600));
+	RenderComponent* Rcomponent1 = renderCFactory.create("welcome.jpg", sf::Vector2f(300, 600));
 	RenderComponent* Rcomponent2 = renderCFactory.create("welcome.jpg", sf::Vector2f(150, 200));
 
 	GameObject gameObject;
@@ -25,28 +28,26 @@ int main()
 	gameObject2.addComponent(Rcomponent2);
 	gameObject2.getComponent<TransformComponent>()->location = sf::Vector2f(400, 400);
 
-	gameObjects.push_back(gameObject);
-	gameObjects.push_back(gameObject2);
+	GameObject gameObject3;
+	gameObject3.addComponent(new TransformComponent(sf::Vector2f(400, 400)));
+	gameObject3.getComponent<TransformComponent>()->location = sf::Vector2f(204, 630);
 
+	gameObjects.push_back(&gameObject);
+	gameObjects.push_back(&gameObject2);
+
+	renderSystem.SetGameObjectPointerVector(gameObjects);
 	
-	while (window.isOpen())
+	bool windowIsOpen = true;
+	while (windowIsOpen)
 	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-		window.clear(sf::Color::Black);
-
+		windowIsOpen = renderSystem.PollEvent();
+		
 		for (unsigned int i = 0; i < gameObjects.size(); i++)
 		{
-			gameObjects[i].update();
-			Drawable draw = gameObjects[i].getDrawable();
-			window.draw(draw.vertexArray, &draw.texture);
+			gameObjects[i]->update();
 		}
 
-		window.display();
+		renderSystem.Draw();
 	}
 }
 

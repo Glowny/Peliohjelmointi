@@ -17,7 +17,8 @@ RenderComponent* RenderComponentFactory::create(std::string fileName, sf::Vector
 
 	sf::VertexArray vertexArray =
 		createVertexData(size);
-	vertexArray = createTextureData(vertexArray, size);
+	vertexArray = 
+		createTextureData(vertexArray, size);
 
 	Drawable drawable;
 	drawable.texture = texture;
@@ -36,7 +37,6 @@ sf::VertexArray RenderComponentFactory::createVertexData(sf::Vector2f size)
 	vertexArray[2].position = sf::Vector2f(size.x, size.y);
 	vertexArray[3].position = sf::Vector2f(0, size.y);
 
-
 	vertexArray[0].color = sf::Color::Red;
 	vertexArray[1].color = sf::Color::Blue;
 	vertexArray[2].color = sf::Color::Green;
@@ -50,5 +50,6 @@ sf::VertexArray RenderComponentFactory::createTextureData(sf::VertexArray vertex
 	vertexArray[1].texCoords = sf::Vector2f(size.x, 0);
 	vertexArray[2].texCoords = sf::Vector2f(size.x, size.y);
 	vertexArray[3].texCoords = sf::Vector2f(0, size.y);
+
 	return vertexArray;
 }

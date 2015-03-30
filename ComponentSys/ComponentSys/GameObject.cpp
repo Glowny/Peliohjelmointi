@@ -26,9 +26,8 @@ void GameObject::update()
 	{
 		it->second->update();
 	}
-
 }
-Drawable GameObject::getDrawable()
+Drawable GameObject::GetFinalDrawable()
 {
 	
 	Drawable tempDraw = 

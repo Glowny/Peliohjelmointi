@@ -3,12 +3,11 @@
 
 RenderComponent::RenderComponent(Drawable drawable)
 {
-	id = 1;
 	this->drawable = drawable;
 }
 RenderComponent::RenderComponent()
 {
-	id = 1;
+
 }
 
 RenderComponent::~RenderComponent()

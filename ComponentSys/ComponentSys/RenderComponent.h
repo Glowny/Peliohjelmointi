@@ -15,12 +15,9 @@ public:
 	void setVertexData(sf::VertexArray vertexArray);
 	void setDrawable(Drawable drawable);
 	Drawable getDrawable();
-	int getID()
-	{
-		return id;
-	}
+
 private:
-	int id;
+
 	Drawable drawable;
 
 };

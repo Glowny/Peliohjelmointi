@@ -16,7 +16,7 @@ public:
 	//RenderComponent renderComponent;
 	//TransformComponent transformComponent;
 	//std::vector<Component*> components; 
-	Drawable getDrawable();
+	Drawable GetFinalDrawable();
 
 	template<typename T>
 	T* getComponent();
