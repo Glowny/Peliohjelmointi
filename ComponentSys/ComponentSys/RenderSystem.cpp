@@ -24,7 +24,8 @@ void RenderSystem::CreateWindow(sf::Vector2i screenSize, std::string screenName)
 {
 	if (window != nullptr)
 	{
-		std::cout << "Window already created, creating new window anyway" << std::endl;
+		std::cout << "Window already created, replacing with a new window" << std::endl;
+		window->close();
 	}
 	window = new sf::RenderWindow(sf::VideoMode(screenSize.x, screenSize.y), screenName);
 }
@@ -46,10 +47,10 @@ void RenderSystem::Draw()
 		return;
 	}
 	window->clear(sf::Color::Black);
-	DrawGameObjectPointerVector();
+	DrawGameObjectVector();
 	window->display();
 }
-// This does not belong here
+
 bool RenderSystem::PollEvent()
 {
 	sf::Event event;
@@ -66,61 +67,44 @@ bool RenderSystem::PollEvent()
 
 
 
-
-void RenderSystem::SetGameObjectPointerVector(std::vector<GameObject*> gameObjectVector)
+void RenderSystem::DrawGameObjectVector()
 {
-	this->gameObjectVector = gameObjectVector;
-}
-
-void RenderSystem::DrawGameObjectPointerVector()
-{
-	for (unsigned int i = 0; i < gameObjectVector.size(); i++)
+	for (unsigned int i = 0; i < drawableGameObjectVector.size(); i++)
 	{
-		DrawGameObjectPointer(gameObjectVector[i]);
+		DrawGameObject(drawableGameObjectVector[i]);
 	}
 }
 
-void RenderSystem::DrawGameObjectPointer(GameObject* gameObject)
+void RenderSystem::DrawGameObject(GameObject* gameObject)
 {
-	RenderComponent* renderComponent;
-	renderComponent = gameObject->getComponent<RenderComponent>();
-
-	if (renderComponent == nullptr)
-		return;
-
-	TransformComponent* transformComponent;
-	transformComponent = gameObject->getComponent<TransformComponent>();
-
-	if (transformComponent == nullptr)
-		return;
-
 	Drawable drawable = gameObject->GetFinalDrawable();
 	window->draw(drawable.vertexArray, &drawable.texture);
 }
 
-// Outdated
-void RenderSystem::DrawMultipleGameObjects(std::vector<GameObject> gameObjects)
+// Check will the updated gameobject be drawn.
+void RenderSystem::CheckGameObjects()
 {
-	for (unsigned int i = 0; i < gameObjects.size(); i++)
+	drawableGameObjectVector.clear();
+
+	for (int i = 0; i < gameObjectVector.size(); i++)
 	{
-		DrawGameObject(gameObjects[i]);
+		bool drawable = true;
+
+		RenderComponent* renderComponent;
+		renderComponent = gameObjectVector[i]->getComponent<RenderComponent>();
+
+		if (renderComponent == nullptr)
+			drawable = false;
+
+		TransformComponent* transformComponent;
+		transformComponent = gameObjectVector[i]->getComponent<TransformComponent>();
+
+		if (transformComponent == nullptr)
+			drawable = false;
+
+		if (drawable)
+			drawableGameObjectVector.push_back(gameObjectVector[i]);
 	}
+
 }
 
-void RenderSystem::DrawGameObject(GameObject gameObject)
-{
-	RenderComponent* renderComponent;
-	renderComponent = gameObject.getComponent<RenderComponent>();
-
-	if (renderComponent == nullptr)
-		return;
-
-	TransformComponent* transformComponent;
-	transformComponent = gameObject.getComponent<TransformComponent>();
-
-	if (transformComponent == nullptr)
-		return;
-
-	Drawable drawable = gameObject.GetFinalDrawable();
-	window->draw(drawable.vertexArray, &drawable.texture);
-}
