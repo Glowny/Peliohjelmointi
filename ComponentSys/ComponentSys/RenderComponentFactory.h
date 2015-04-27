@@ -10,9 +10,10 @@ class RenderComponentFactory
 public:
 	RenderComponentFactory();
 	RenderComponent* create(std::string fileName, sf::Vector2f size);
+	RenderComponent* create(sf::Vector2f size);
 	~RenderComponentFactory();
 private:
 	sf::VertexArray createVertexData(sf::Vector2f size);
-	sf::VertexArray createTextureData(sf::VertexArray vertexArray, sf::Vector2f size);
+	sf::VertexArray createTextureData(sf::VertexArray vertexArray, sf::Vector2u size);
 };
 

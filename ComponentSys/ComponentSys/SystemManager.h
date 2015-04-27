@@ -9,13 +9,14 @@ public:
 	SystemManager();
 	~SystemManager();
 	
-	void SetGameObjectPointerVector(std::vector<GameObject*> gameObjectPointerVector);
+	void SetGameObjectVector(std::vector<GameObject*> gameObjectVector);
 	void AddSystem(System* system);
 	template<typename T>
 	T* getSystem();
 	void Update();
+	bool CheckChanges();
 private:
-	std::vector<GameObject*> gameObjectPointerVector;
+	std::vector<GameObject*> gameObjectVector;
 	using SystemMap = std::unordered_map <const std::type_info*, System* >;
 	SystemMap _systems;
 };

@@ -14,10 +14,7 @@ RenderComponent::~RenderComponent()
 {
 }
 
-void RenderComponent::update()
-{
 
-}
 void RenderComponent::setDrawable(Drawable drawable)
 {
 	this->drawable = drawable;

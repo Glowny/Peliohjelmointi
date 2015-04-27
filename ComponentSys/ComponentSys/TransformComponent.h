@@ -7,13 +7,8 @@ public:
 	TransformComponent();
 	TransformComponent(sf::Vector2f location);
 	~TransformComponent();
-	void update();
+
 	sf::Vector2f location;
-	int getID()
-	{
-		return id;
-	}
-private:
-	int id;
+	sf::Vector2f speed;
 };
 

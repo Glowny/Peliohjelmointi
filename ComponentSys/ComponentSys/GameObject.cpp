@@ -3,6 +3,7 @@
 
 GameObject::GameObject()
 {
+	componentChanges = false;
 }
 
 
@@ -10,21 +11,19 @@ GameObject::~GameObject()
 {
 }
 
-//void GameObject::addComponent(Component* component)
-//{
-//	components.push_back(component);
-//}
 
 void GameObject::addComponent(Component* component)
 {
 	_components.insert(std::make_pair(&typeid(*component), component));
+	componentChanges = true;
 }
 
-void GameObject::update()
+
+void GameObject::Update()
 {
 	for (auto it = _components.begin(); it != _components.end(); ++it)
 	{
-		it->second->update();
+		//it->second->Update();
 	}
 }
 Drawable GameObject::GetFinalDrawable()

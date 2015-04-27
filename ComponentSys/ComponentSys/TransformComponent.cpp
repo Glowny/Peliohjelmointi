@@ -2,22 +2,21 @@
 
 TransformComponent::TransformComponent()
 {
-	location.x = 1;
-	location.y = 1;
-	id = 2;
+	location.x = 0;
+	location.y = 0;
+	speed.x = 0;
+	speed.y = 0;
+
 }
 
 TransformComponent::TransformComponent(sf::Vector2f location)
 {
 	this->location = location;
-	id = 2;
+	speed.x = 0;
+	speed.y = 0;
 }
 
 
 TransformComponent::~TransformComponent()
 {
-}
-void TransformComponent::update()
-{
-	location.x = location.x + 0.1f;
 }

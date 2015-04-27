@@ -9,7 +9,7 @@ public:
 	RenderComponent(Drawable drawable);
 	RenderComponent();
 	~RenderComponent();
-	void update();
+
 
 	void setTexture(sf::Texture texture);
 	void setVertexData(sf::VertexArray vertexArray);

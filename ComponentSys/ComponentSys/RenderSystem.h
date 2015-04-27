@@ -17,16 +17,14 @@ public:
 	void Draw();
 	bool PollEvent();
 
-	void SetGameObjectPointerVector(std::vector<GameObject*> gameObjectVector);
-	void DrawGameObjectPointerVector();
-	
-	void DrawGameObjectPointer(GameObject* gameObject);
-
-	//Outdated
-	void DrawMultipleGameObjects(std::vector<GameObject> gameObjects);
-	void DrawGameObject(GameObject gameObject);
+	void CheckGameObjects();
 private:
+
+	std::vector<GameObject*> drawableGameObjectVector;
 	sf::RenderWindow* window;
-	std::vector<GameObject*> gameObjectVector;
+	void DrawGameObjectVector();
+	void DrawGameObject(GameObject* gameObject);
+
+
 };
 
