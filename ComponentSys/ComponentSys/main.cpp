@@ -68,9 +68,11 @@ int main()
 			gameObject.getComponent<TransformComponent>()->speed += sf::Vector2f(0.01f, 0.0f);
 		systemManager.Update();
 
-		if (gameObject.getComponent<TransformComponent>()->location.x > 1200)
-			gameObject.getComponent<TransformComponent>()->location.x = -300;
-
+		if (gameObject.getComponent<TransformComponent>() != nullptr)
+		{
+			if (gameObject.getComponent<TransformComponent>()->location.x > 1200)
+				gameObject.getComponent<TransformComponent>()->location.x = -300;
+		}
 		for (unsigned int i = 0; i < gameObjects.size(); i++)
 		{
 			gameObjects[i]->Update();
