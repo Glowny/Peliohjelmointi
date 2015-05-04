@@ -1,0 +1,80 @@
+﻿Build started 4.5.2015 12:47:18.
+     1>Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Lua\Lua.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Iinclude/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/" /Fd"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/vc120.pdb" /Gd /TC /analyze- /errorReport:prompt source\lapi.c source\lauxlib.c source\lbaselib.c source\lbitlib.c source\lcode.c source\lcorolib.c source\lctype.c source\ldblib.c source\ldebug.c source\ldo.c source\ldump.c source\lfunc.c source\lgc.c source\linit.c source\liolib.c source\llex.c source\lmathlib.c source\lmem.c source\loadlib.c source\lobject.c source\lopcodes.c source\loslib.c source\lparser.c source\lstate.c source\lstring.c source\lstrlib.c source\ltable.c source\ltablib.c source\ltm.c source\lundump.c source\lutf8lib.c source\lvm.c source\lzio.c
+         lzio.c
+         lvm.c
+         lutf8lib.c
+         lundump.c
+         ltm.c
+         ltablib.c
+         ltable.c
+         lstrlib.c
+         lstring.c
+         lstate.c
+         lparser.c
+         loslib.c
+         lopcodes.c
+         lobject.c
+         loadlib.c
+         lmem.c
+         lmathlib.c
+         llex.c
+         liolib.c
+         linit.c
+         Generating Code...
+         Compiling...
+         lgc.c
+         lfunc.c
+         ldump.c
+         ldo.c
+         ldebug.c
+         ldblib.c
+         lctype.c
+         lcorolib.c
+         lcode.c
+         lbitlib.c
+         lbaselib.c
+         lauxlib.c
+         lapi.c
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\bin/Win32Debug/Lua.lib" /NOLOGO C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lapi.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lauxlib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lbaselib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lbitlib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lcode.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lcorolib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lctype.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ldblib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ldebug.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ldo.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ldump.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lfunc.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lgc.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/linit.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/liolib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/llex.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lmathlib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lmem.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/loadlib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lobject.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lopcodes.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/loslib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lparser.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lstate.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lstring.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lstrlib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ltable.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ltablib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/ltm.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lundump.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lutf8lib.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lvm.obj
+         C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\obj/Win32Debug/lzio.obj
+         Lua.vcxproj -> C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\bin/Win32Debug/Lua.lib
+     1>Done Building Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Lua\Lua.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.32

@@ -1,9 +1,42 @@
-﻿Build started 27.4.2015 12:17:25.
-     1>Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\ComponentSys\ComponentSys.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+﻿Build started 4.5.2015 12:47:18.
+     1>Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\ComponentSys\ComponentSys.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\debug\system.obj' because it is being used by another process.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\\ComponentSys\SFML-2.2\include" /IC:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Lua/include/ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Component.cpp GameObject.cpp main.cpp RenderComponent.cpp RenderComponentFactory.cpp RenderSystem.cpp System.cpp SystemManager.cpp TransformComponent.cpp TransformSystem.cpp
+         TransformSystem.cpp
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\transformsystem.cpp(15): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\transformsystem.cpp(24): warning C4018: '<' : signed/unsigned mismatch
+         TransformComponent.cpp
+         SystemManager.cpp
+         System.cpp
+         RenderSystem.cpp
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\rendersystem.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+         RenderComponentFactory.cpp
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\rendercomponentfactory.cpp(61): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\rendercomponentfactory.cpp(62): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\rendercomponentfactory.cpp(63): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         RenderComponent.cpp
+         main.cpp
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\main.cpp(30): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\main.cpp(36): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\tti13svesak\documents\github\peliohjelmointi\componentsys\componentsys\main.cpp(42): warning C4305: 'argument' : truncation from 'double' to 'float'
+         GameObject.cpp
+         Component.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Debug\ComponentSys.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\\ComponentSys\SFML-2.2\lib" /LIBPATH:C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\\bin\Win32Debug "sfml-graphics-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" Lua.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Debug\ComponentSys.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Debug\ComponentSys.lib" /MACHINE:X86 Debug\Component.obj
+         Debug\GameObject.obj
+         Debug\main.obj
+         Debug\RenderComponent.obj
+         Debug\RenderComponentFactory.obj
+         Debug\RenderSystem.obj
+         Debug\System.obj
+         Debug\SystemManager.obj
+         Debug\TransformComponent.obj
+         Debug\TransformSystem.obj
          ComponentSys.vcxproj -> C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\Debug\ComponentSys.exe
-     1>Done Building Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\ComponentSys\ComponentSys.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\tti13svesak\Documents\GitHub\peliohjelmointi\ComponentSys\ComponentSys\ComponentSys.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:06.42

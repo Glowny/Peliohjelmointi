@@ -1,6 +1,7 @@
 #include "SFML\Graphics.hpp"
 #include "SFML\Window.hpp"
 #include "SFML\System.hpp"
+#include "lua\lua.hpp"
 
 #include "GameObject.h"
 #include "TransformComponent.h"
@@ -10,8 +11,31 @@
 #include "TransformSystem.h"
 #include "SystemManager.h"
 #include <vector>
+#include <iostream>
+
+static std::vector<GameObject*> gameObjects;
+
+static int SetFishSpeed(lua_State* luaState)
+{
+	lua_Number speedY = lua_tonumber(luaState, -1);
+	lua_Number speedX = lua_tonumber(luaState, -2);
+	lua_Number index = lua_tonumber(luaState, -3);
+
+	if (gameObjects.size() > index >= 0)
+		gameObjects[index]->getComponent<TransformComponent>()->speed = sf::Vector2f(speedX, speedY);
+	else
+		std::cout << "Out of vector bounds" << std::endl;
+}
+
+
+
 int main()
 {
+	lua_State* luaState = luaL_newstate();
+	assert(luaState != nullptr);
+	
+
+
 	SystemManager systemManager;
 	systemManager.AddSystem(new TransformSystem());
 	RenderSystem* renderSystem = new RenderSystem();
@@ -20,7 +44,6 @@ int main()
 	renderSystem->CreateWindow(sf::Vector2i(900, 1100), "Deep lake simulator");
 	RenderComponentFactory renderCFactory;
 
-	std::vector<GameObject*> gameObjects;
 
 	GameObject gameObject;
 	gameObject.addComponent(new TransformComponent(sf::Vector2f(100, 200)));
@@ -66,6 +89,10 @@ int main()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
 			if (gameObject.getComponent<TransformComponent>() != nullptr)
 			gameObject.getComponent<TransformComponent>()->speed += sf::Vector2f(0.01f, 0.0f);
+
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+			
+
 		systemManager.Update();
 
 		if (gameObject.getComponent<TransformComponent>() != nullptr)
