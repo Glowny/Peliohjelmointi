@@ -25,6 +25,7 @@ static int SetFishSpeed(lua_State* luaState)
 		gameObjects[index]->getComponent<TransformComponent>()->speed = sf::Vector2f(speedX, speedY);
 	else
 		std::cout << "Out of vector bounds" << std::endl;
+	return 3;
 }
 
 
@@ -33,8 +34,27 @@ int main()
 {
 	lua_State* luaState = luaL_newstate();
 	assert(luaState != nullptr);
-	
+	luaL_openlibs(luaState);
 
+	int result = luaL_loadfile(luaState, "fishScript.lua");
+	if (result != LUA_OK)
+	{
+		const char* message = lua_tostring(luaState, -1);
+		std::cout << message << std::endl;
+	}
+
+	assert(result == LUA_OK);
+
+	result = lua_pcall(luaState, 0, 0, 0);
+	if (result != LUA_OK)
+	{
+		const char* message = lua_tostring(luaState, -1);
+		std::cout << message << std::endl;
+	}
+	assert(result == LUA_OK);
+
+	lua_pushcfunction(luaState, SetFishSpeed);
+	lua_setglobal(luaState, "CFishSpeed");
 
 	SystemManager systemManager;
 	systemManager.AddSystem(new TransformSystem());
@@ -91,6 +111,12 @@ int main()
 			gameObject.getComponent<TransformComponent>()->speed += sf::Vector2f(0.01f, 0.0f);
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+		{
+			const int globalType = lua_getglobal(luaState, "DoFishStuff");
+			assert(globalType == LUA_TFUNCTION);
+			result = lua_pcall(luaState, 0, 0, 0);
+			assert(result == LUA_OK);
+		}
 			
 
 		systemManager.Update();
